@@ -1,78 +1,72 @@
-let precioPromoDeseada = 0;
-let precioPromo1 = 2000;
-let precioPromo2 = 2500;
-let precioPromo3 = 1500;
-let precioPromo4 = 1200;
+const promos =[
+    {nombre:"promo1", precio:"2000"},
+    {nombre:"promo2", precio:"2500"},
+    {nombre:"promo3", precio:"1500"},
+    {nombre:"promo4", precio:"1200"},
+]
 
-let inicio = prompt("Hola, ¿querés comprar algo? (SI/NO)");
+let carrito = []
 
-while(inicio != "SI" && inicio != "NO"){
-    alert("Ingresá SI o NO");
-    inicio = prompt("Hola, ¿querés comprar algo? (SI/NO)");
+let opcion = prompt("¿Querés comprar algo? (si/no)");
+
+while(opcion !="si" && opcion != "no"){
+    alert("ingresá si o no")
+    opcion = prompt("¿Querés comprar algo? (si/no)")
 }
 
-if(inicio == "SI"){
-    alert("EMPECEMOS!")
+if (opcion == "si"){
+    alert("Empecemos");
+    let todasLasPromos = promos.map(
+        (promo) => promo.nombre + " " + promo.precio + "$");
+
+    alert(todasLasPromos.join(" - "));
 }
-else if(inicio == "NO"){
-    alert("Nos vemos!")
+else if(opcion =="no") {
+    alert("nos vemos")
 }
 
+while(opcion != "no") {
+    let promo = prompt("Agregá una promo para armar tu carrito");
+    let precio = 0;
 
-
-function preguntarPromoDeseada(){
-let promoDeseada = prompt("¿Qué promo vas a querer? (1,2,3 o 4)");
-
-if(promoDeseada == "1" || promoDeseada == "2" || promoDeseada == "3" || promoDeseada == "4"){
-    switch(promoDeseada){
-        case "1":
-            alert("Elegiste PROMO 1")
-            precioPromoDeseada = precioPromoDeseada + precioPromo1;
+    if(promo == "promo1" || promo == "promo2" || promo == "promo3" || promo == "promo4"){
+        switch(promo) {
+          case "promo1":
+            precio = 2000;
             break;
-        case "2":
-            alert("Elegiste PROMO 2")
-            precioPromoDeseada = precioPromoDeseada + precioPromo2;
-
+          case "promo2":
+            precio = 2500;
             break;
-        case "3":
-            alert("Elegiste PROMO 3")
-            precioPromoDeseada = precioPromoDeseada + precioPromo3;
-
+          case "promo3":
+            precio = 1500;
             break;
-        case "4":
-            alert("Elegiste PROMO 4")
-            precioPromoDeseada = precioPromoDeseada + precioPromo4;
-
+          case "promo4":
+            precio = 1200;
             break;
-        default:
 
+          default: 
+            alert("elegí una opción válida");
             break;
-    }
-}
-else {
-    alert("Ingresá una opción válida")
-}
-}
-
-
-function preguntarMas(){
-    let llevarMas = prompt("¿Vas a querer algo más? (SI/NO)")
-
-    while(llevarMas != "SI" && llevarMas != "NO"){
-        alert("Ingresá SI o NO");
-        llevarMas = prompt("¿Vas a querer algo más? (SI/NO)")
-    }
-    
-    if(llevarMas == "SI"){
-        preguntarPromoDeseada()
-        preguntarMas()
         }
-    else if(llevarMas == "NO"){
-        alert("Gracias por tu compra!. Su total es = " + precioPromoDeseada + "$")
-        }
+    let unidades = parseInt(prompt(`¿Cuántas ${promo} vas a querer? "Ingresá un NÚMERO"`))
+
+    carrito.push({promo, unidades, precio});
+    console.log(carrito);
+    } else {
+        alert("elegí una opción válida")
     }
 
-if(inicio == "SI"){
-    preguntarPromoDeseada();
-    preguntarMas();
+    opcion = prompt("¿Desea seguir comprando? (<no> para salir)")
+
+    while(opcion == "no"){
+        alert("Gracias por la compra, nos vemos!")
+        carrito.forEach((carritoFinal)=> {
+            console.log(`promo: ${carritoFinal.promo}, unidades: ${carritoFinal.unidades}, 
+            total a pagar: ${carritoFinal.unidades * carritoFinal.precio}`)
+        })
+        break;
+    }
 }
+
+const total = carrito.reduce((acc, el)=> acc + el.precio * el.unidades, 0);
+console.log("el total por su compra es de " + total);
