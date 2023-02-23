@@ -7,26 +7,26 @@ const promos =[
     {
         id: 1,
         nombre:"Promo 1", 
-        precio: 2000,
-        img: "http://placekitten.com/200/300",
+        precio: 2130,
+        img: "https://vinotecalavia.com/4852-large_default/fernet-branca-750cc-1-coca-cola-225lt.jpg",
     },
     {
         id: 2,
         nombre:"Promo 2", 
-        precio: 2500,
-        img: "http://placekitten.com/200/300",
+        precio: 1040,
+        img: "https://vinotecalavia.com/4688-large_default/gancia-950cc-1-sprites-225-lts.jpg",
     },
     {
         id: 3,
         nombre:"Promo 3", 
-        precio: 1500,
-        img: "http://placekitten.com/200/300",
+        precio: 1420,
+        img: "https://vinotecalavia.com/4853-large_default/campari-de-750-cc-2-cepita-de-naranja-1lt.jpg",
     },
     {
         id: 4,
         nombre:"Promo 4", 
-        precio: 1200,
-        img: "http://placekitten.com/200/300",
+        precio: 1350,
+        img: "https://vinotecalavia.com/4433-large_default/2-botellas-de-coca-cola-de-225-1-botella-de-sprite-de-225.jpg",
     },
 ]
 
