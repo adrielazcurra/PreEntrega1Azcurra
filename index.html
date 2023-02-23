@@ -5,19 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Simulador interactivo venta bebidas</h1>
     </header>
 
-    <div>
-        <ul>Promos</ul>
-        <li>PROMO 1 | Fernet + Cola = 2000$</li>
-        <li>PROMO 2 | Campari + Jugo = 2500$</li>
-        <li>PROMO 3 | Gancia + Sprite/Pomelo = 1500$</li>
-        <li>PROMO 4 | Combo Gaseosas = 1200$</li>
+    <div class="productos">
+        <h2 class="productos-titulo">PROMOS</h2>
     </div>
+
+    <div id="shopContenido" class="shopContenido"></div>
+
+    
+    <div class="carrito">
+        <h3 id="verCarrito" class="ver-carrito">Nuevo Carrito</h3>
+    </div>
+
+    <div class="carrito">
+        <h3 id="recuperarCarrito" class="ver-carrito">Recuperar Carrito</h3>
+    </div>
+
+    <div id="modal-container" class="modal-container"></div>
+    
+    <div class="extra"></div>
+
 
 
     <script src="./js/index.js"></script>
